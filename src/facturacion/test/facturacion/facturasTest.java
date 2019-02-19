@@ -6,7 +6,7 @@
 package facturacion;
 
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -132,6 +132,7 @@ public class facturasTest {
         System.out.println("calculo: "+ calcDescuento);
         boolean condition = calcImpuesto > calcDescuento;
         System.out.println(condition);
+    
         assertTrue(calcImpuesto > calcDescuento);
         
         //System.out.println("Valor real: "+ valorReal);
@@ -141,30 +142,34 @@ public class facturasTest {
         //fail("The test case is a prototype.");
     }*/
     
-    @Test
+  
+   /* @Test
     public void testElMismoObjeto() {
-        double calcImpuesto = 0.0;
-        double calcDescuento = 0.0;
-        
-        facturas objeto = new facturas();
-        objeto.cantidad[0]= 1;
-        objeto.preciounitario[0] = 200;
+       facturas objeto = new facturas();
+       facturas objeto2 = new facturas();
+       
+        assertNotSame(objeto, objeto2);
+    }*/
+    @Test
+    public void testDescMenorImp() {
+       facturas objeto = new facturas();
+      
+     double calcImpuesto = 0.0;
+        double calcDescuento = 0.0;       
+   
+        objeto.cantidad[0]= 3;
+        objeto.preciounitario[0] = 300;
         
         calcImpuesto= objeto.calculoFacturas();
-        System.out.println("calculo: "+ calcImpuesto);
+        System.out.println("calculo Impuesto: "+ calcImpuesto);
         
         objeto.cantidad[0]= 2;
-        objeto.preciounitario[0] = 500;
+        objeto.preciounitario[0] = 400;
         calcDescuento= objeto.calculoFacturas();
-        System.out.println("calculo: "+ calcDescuento);
-        boolean condition = calcImpuesto > calcDescuento;
-        System.out.println(condition);
-        assertTrue(calcImpuesto > calcDescuento);
-        
-        //System.out.println("Valor real: "+ valorReal);
-        //System.out.println("Valor esperado: " + valorEsperado);
-      
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("calculo Descuento: "+ calcDescuento);       
+    
+        assertFalse( calcDescuento < calcImpuesto);
+  
     }
+    
 }
