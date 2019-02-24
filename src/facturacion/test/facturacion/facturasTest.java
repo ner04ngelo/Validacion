@@ -18,27 +18,9 @@ public class facturasTest {
     }
 
    
-    /*@Test
-    public void testCalculoFacturas() {
-        double valorEsperado = 3000;
-        double valorReal = 0.00;
-        
-        System.out.println("calculoFacturas");
-        facturas objeto = new facturas();
-        objeto.capturarDatos();
-        valorReal = objeto.calculoFacturas();
-        
-        assertEquals(valorEsperado, valorReal, 0.05);
-        System.out.println("Valor real: "+ valorReal);
-        System.out.println("Valor esperado: " + valorEsperado);
-        System.out.println(valorReal);
-        System.out.println(valorEsperado);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }*/
     
- /*@Test
+    
+@Test
     public void nombreTest() {
         facturas objeto = new facturas();
         objeto.nombre[0] = "Juan López";
@@ -55,9 +37,10 @@ public class facturasTest {
 
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-    }*/
-  
-    /*@Test
+    }
+ 
+    
+    @Test
     public void codigoTest() {
         facturas objeto = new facturas();
         objeto.nombre[0] = "Juan López";
@@ -74,9 +57,10 @@ public class facturasTest {
 
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-    }*/
+    }
     
-    /*@Test
+    
+    @Test
     public void testCalculoFactura1() {
         double valorEsperado = 1035;
         double valorReal = 1035;
@@ -93,9 +77,9 @@ public class facturasTest {
         System.out.println(valorEsperado);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-    }*/
-    
-    /*@Test
+    }
+  
+    @Test
     public void testCalculoFactura2() {
         double valorEsperado = 920;
         double valorReal = 920;
@@ -112,9 +96,9 @@ public class facturasTest {
         System.out.println(valorEsperado);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-    }*/
+    }
     
-    /*@Test
+    @Test
     public void testImpMayorDesc() {
         double calcImpuesto = 0.0;
         double calcDescuento = 0.0;
@@ -140,36 +124,25 @@ public class facturasTest {
       
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-    }*/
+    }
     
   
-   /* @Test
+   @Test
     public void testElMismoObjeto() {
        facturas objeto = new facturas();
        facturas objeto2 = new facturas();
        
         assertNotSame(objeto, objeto2);
-    }*/
-    @Test
-    public void testDescMenorImp() {
-       facturas objeto = new facturas();
-      
-     double calcImpuesto = 0.0;
-        double calcDescuento = 0.0;       
-   
-        objeto.cantidad[0]= 3;
-        objeto.preciounitario[0] = 300;
-        
-        calcImpuesto= objeto.calculoFacturas();
-        System.out.println("calculo Impuesto: "+ calcImpuesto);
-        
-        objeto.cantidad[0]= 2;
-        objeto.preciounitario[0] = 400;
-        calcDescuento= objeto.calculoFacturas();
-        System.out.println("calculo Descuento: "+ calcDescuento);       
-    
-        assertFalse( calcDescuento < calcImpuesto);
-  
     }
+    
+    @Test
+    public void testEsNulo(){
+        facturas objeto = new facturas();
+        
+        assertNotNull(objeto);
+        
+        
+    }
+  
     
 }
